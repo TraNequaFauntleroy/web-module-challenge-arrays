@@ -46,10 +46,10 @@ Use the copy function below to do the following:
 */
 
 function copy(array){
-  return originalFlavors;
-}    
+  return [...array];
+} 
 
-console.log(copy(originalFlavors));
+console.log('task 1', copy(originalFlavors));
 
 
 
@@ -64,14 +64,15 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 */
 
 
-// function is31Flavors(array){
-//  if (originalFlavors.length === 31) {
-//    return TRUE;
-//  } else {
-//    return FALSE;
-//  }
-// }
-// console.log(is31Flavors('task 2', originalFlavors));
+function is31Flavors(array){
+ if (array.length === 31) {
+   return true;
+ } else {
+   return false;
+ }
+}
+
+console.log('task 2', is31Flavors(originalFlavors));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Corporate has come to you with an idea for a new flavor: Rainbow Sherbert! They think this will be a game changer. You need to modify the array to include this flavor. 
@@ -86,12 +87,12 @@ Use the addFlavor function below to do the following:
 */
 
 
-function addFlavor(array){
-  originalFlavors.unshift('Rainbow Sherbert');
-  return originalFlavors;
+function addFlavor(array, string){
+  array.unshift(string);
+  return array;
 }
 
-console.log(addFlavor('task 3', originalFlavors));
+console.log('task 3', addFlavor(originalFlavors, 'Rainbow Sherbert'));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -106,11 +107,11 @@ Use the removeLastFlavor function below to do the following:
 */
 
 function removeLastFlavor(array){
- originalFlavors.pop();
- return originalFlavors;
+ array.pop();
+ return array;
 }
 
-console.log('task 4', removeLastFlavor);
+console.log('task 4', removeLastFlavor(originalFlavors));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -124,9 +125,9 @@ Use the getFlavorByIndex function below to do the following:
   For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
 
-// function getFlavorByIndex(array, num){
-//   return array[num];
-// }
+function getFlavorByIndex(array, num){
+  return array[num];
+} 
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -177,7 +178,7 @@ Use the filterByWord function below to do the following:
 */
 
 function filterByWord(array, string){
-  filteredArray = [];
+  const filteredArray = [];
   for (let i=0; i < array.length; i++) {
     if (array[i].includes(string)) {
       filteredArray.push(array[i]);
@@ -186,7 +187,7 @@ function filterByWord(array, string){
   return filteredArray
 }
 
-console.log('task 7', filteredArray(originalFlavors,'chocolate'))
+console.log('task 7', filterByWord(originalFlavors,'chocolate'))
 
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
